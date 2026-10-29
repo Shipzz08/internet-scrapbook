@@ -1,5 +1,21 @@
 @import './theme.css';
 
+:root {
+  --lemonade: #FBD271;
+  --sea-blue: #0F4E77;
+  --matcha: #89A377;
+  --honey-drizzle: #E7BD8B;
+  --coffee-grounds: #372516;
+  --neutral-cream: #FAF6EE;
+  --neutral-paper: #FFFDF9;
+  --font-heading: 'Caveat', cursive;
+  --font-notes: 'Kalam', cursive;
+  --border: #E2D2BC;
+  --accent: var(--lemonade);
+  --text-h: var(--coffee-grounds);
+  --bg: var(--neutral-cream);
+}
+
 body {
   margin: 0;
   background: var(--neutral-cream);
@@ -14,9 +30,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: var(--bg);
   color: var(--text-h);
 }
-
-/* No other styles – a clean blank page */

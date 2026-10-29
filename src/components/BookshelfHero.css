@@ -1,0 +1,212 @@
+.bookshelf-hero {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.hero-paper {
+  background: var(--neutral-paper);
+  border: 2px dashed var(--border);
+  border-radius: 6px;
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(55, 37, 22, 0.08);
+  transform: rotate(0.5deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tape-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: rgba(231, 189, 139, 0.65);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 2px dashed rgba(55, 37, 22, 0.15);
+  border-right: 2px dashed rgba(55, 37, 22, 0.15);
+}
+
+.hero-badge {
+  margin-bottom: 0.5rem;
+}
+
+.hand-note {
+  font-family: var(--font-notes);
+  font-size: 1.25rem;
+  color: var(--matcha);
+  background: rgba(137, 163, 119, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+}
+
+.bookshelf-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  color: var(--coffee-grounds);
+  margin: 0.5rem 0 0.75rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-tagline {
+  font-family: var(--font-notes);
+  font-size: 1.2rem;
+  color: var(--coffee-grounds);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  opacity: 0.85;
+}
+
+/* Bookshelf Area */
+.bookshelf-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.camera-item {
+  position: absolute;
+  left: 15px;
+  bottom: 22px;
+  z-index: 5;
+  filter: drop-shadow(2px 3px 0px rgba(55, 37, 22, 0.2));
+  transform: rotate(-6deg);
+  transition: transform 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .camera-item:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+}
+
+.camera-svg {
+  width: 58px;
+  height: 45px;
+}
+
+.bookshelf-shelf {
+  width: 100%;
+  position: relative;
+}
+
+.books-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 3rem;
+  min-height: 160px;
+}
+
+.book {
+  border-radius: 3px 3px 0 0;
+  border: 2.5px solid var(--coffee-grounds);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 8px 0;
+  box-shadow: 2px 3px 0px rgba(55, 37, 22, 0.25);
+  position: relative;
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .book:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.book-title {
+  font-family: var(--font-notes);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--coffee-grounds);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Book color variants */
+.book-matcha {
+  background-color: var(--matcha);
+}
+
+.book-lemonade {
+  background-color: var(--lemonade);
+}
+
+.book-seablue {
+  background-color: var(--sea-blue);
+}
+.book-seablue .book-title {
+  color: #FFFDF9;
+}
+
+.book-honey {
+  background-color: var(--honey-drizzle);
+}
+
+.book-coffee {
+  background-color: var(--coffee-grounds);
+}
+.book-coffee .book-title {
+  color: #FFFDF9;
+}
+
+.book-matcha-alt {
+  background-color: #A3BE8C;
+}
+
+.leaning {
+  transform: rotate(8deg);
+  transform-origin: bottom center;
+}
+
+.shelf-plank {
+  width: 100%;
+  height: 16px;
+  background: var(--honey-drizzle);
+  border: 2.5px solid var(--coffee-grounds);
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(55, 37, 22, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .bookshelf-hero {
+    padding: 0 0.5rem;
+  }
+  .hero-paper {
+    padding: 2rem 1rem 1.5rem;
+  }
+  .books-row {
+    padding: 0 1rem;
+    gap: 4px;
+  }
+  .camera-item {
+    left: 4px;
+    bottom: 20px;
+  }
+  .camera-svg {
+    width: 46px;
+    height: 36px;
+  }
+}
