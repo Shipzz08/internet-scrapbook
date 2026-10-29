@@ -1,0 +1,299 @@
+.corkboard-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.corkboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.corkboard-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--coffee-grounds);
+  margin: 0 0 0.5rem;
+}
+
+.corkboard-subtitle {
+  font-family: var(--font-notes);
+  font-size: 1.2rem;
+  color: var(--coffee-grounds);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Category Filter Pills */
+.category-filter-wrap {
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.category-pills {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  font-family: var(--font-notes);
+  font-size: 1rem;
+  background: var(--neutral-paper);
+  color: var(--coffee-grounds);
+  border: 1.5px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.category-pill:hover {
+  background: var(--lemonade);
+  border-color: var(--coffee-grounds);
+}
+
+.category-pill.active {
+  background: var(--sea-blue);
+  color: #FFFDF9;
+  border-color: var(--coffee-grounds);
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(15, 78, 119, 0.3);
+}
+
+/* Corkboard Board / Grid */
+.corkboard-board {
+  background: #EEDCC5;
+  background-image: radial-gradient(#D5BFA3 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 3px solid var(--coffee-grounds);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  box-shadow: inset 0 4px 12px rgba(55, 37, 22, 0.15), 0 8px 24px rgba(55, 37, 22, 0.08);
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Scrapbook Card */
+.scrapbook-card {
+  background: var(--neutral-paper);
+  border: 2px solid var(--coffee-grounds);
+  border-radius: 4px;
+  padding: 14px 14px 18px;
+  box-shadow: 3px 5px 12px rgba(55, 37, 22, 0.2);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scrapbook-card:hover {
+    transform: translateY(-6px) scale(1.02) rotate(0deg) !important;
+    box-shadow: 5px 8px 20px rgba(55, 37, 22, 0.28);
+    z-index: 10;
+  }
+}
+
+.tape-corner {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  background: rgba(231, 189, 139, 0.7);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  border-left: 2px dashed rgba(55, 37, 22, 0.15);
+  border-right: 2px dashed rgba(55, 37, 22, 0.15);
+  z-index: 2;
+}
+
+.tape-corner.top-left {
+  top: -10px;
+  left: 20px;
+  transform: rotate(-12deg);
+}
+
+.tape-corner.top-right {
+  top: -10px;
+  right: 20px;
+  transform: rotate(8deg);
+}
+
+.photo-frame {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  border-radius: 2px;
+  background: #000;
+  position: relative;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.scrapbook-card:hover .photo-frame img {
+  transform: scale(1.04);
+}
+
+.photo-category-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(55, 37, 22, 0.8);
+  color: #FFFDF9;
+  font-family: var(--font-notes);
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.photo-caption {
+  padding-top: 12px;
+}
+
+.photo-caption h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--coffee-grounds);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.photo-story {
+  font-family: var(--font-notes);
+  font-size: 0.95rem;
+  color: var(--coffee-grounds);
+  margin: 0 0 12px;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.photo-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-notes);
+  font-size: 0.85rem;
+  color: var(--coffee-grounds);
+  opacity: 0.7;
+  border-top: 1px dashed var(--border);
+  padding-top: 8px;
+}
+
+/* Modal Lightbox */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(55, 37, 22, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-scrapbook-card {
+  background: var(--neutral-paper);
+  border: 3px solid var(--coffee-grounds);
+  border-radius: 6px;
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--coffee-grounds);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-image-wrap {
+  width: 100%;
+  max-height: 360px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 2px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+
+.modal-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-badge {
+  background: var(--matcha);
+  color: #FFFDF9;
+  font-family: var(--font-notes);
+  font-size: 0.85rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.modal-scrapbook-card h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--coffee-grounds);
+  margin: 0 0 0.75rem;
+}
+
+.modal-story {
+  font-family: var(--font-notes);
+  font-size: 1.15rem;
+  color: var(--coffee-grounds);
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.modal-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-notes);
+  font-size: 0.95rem;
+  color: var(--coffee-grounds);
+  opacity: 0.8;
+  border-top: 1px dashed var(--border);
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .corkboard-board {
+    padding: 1.5rem 1rem;
+  }
+  .photos-grid {
+    grid-template-columns: 1fr;
+  }
+}
