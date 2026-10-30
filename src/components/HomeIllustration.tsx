@@ -5,8 +5,8 @@ export default function HomeIllustration() {
   return (
     <div className="home-illustration-wrapper">
       <svg
-        viewBox="0 0 666 374"
-        preserveAspectRatio="xMaxYMax meet"
+        viewBox="220 90 446 284"
+        preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-label="Illustration of a girl working at a craft desk, with a shelf of books above her"
         className="home-svg"
@@ -23,7 +23,7 @@ export default function HomeIllustration() {
         />
 
         {/* Shelf Group (Shelf, Brackets, Books, and Plant scaled and positioned above girl's head) */}
-        <g id="shelf-group" transform="translate(150, 15) scale(0.52)">
+        <g id="shelf-group" transform="translate(260, 100) scale(0.62)">
           {/* Shelf Group */}
           <g id="shelf">
             {/* Brackets */}
