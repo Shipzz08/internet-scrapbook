@@ -1,38 +1,106 @@
-/* Navigation strip – warm paper feel */
+/* Anchor offset and top padding for fixed nav */
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  padding-top: 100px;
+}
+
 .navigation {
-  background: var(--neutral-paper);
-  margin: 0;
-  padding: 8px 0;
-  transform: rotate(-1deg);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  background: color-mix(in srgb, var(--neutral-cream) 70%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
-.navigation ul {
+
+@supports not (backdrop-filter: blur(8px)) {
+  .navigation {
+    background: color-mix(in srgb, var(--neutral-cream) 95%, transparent);
+  }
+}
+
+.nav-content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  justify-content: center;
+  gap: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  box-sizing: border-box;
 }
-.navigation a {
+
+.nav-brand {
   font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--coffee-grounds);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  padding: 12px 16px;
   min-height: 44px;
-  border-radius: 4px;
-  transition: background 0.2s ease;
-  counter-reset: 0;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .navigation a:hover {
-    background: rgba(0, 0, 0, 0.05);
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-family: var(--font-notes);
+  font-size: 1.1rem;
+  color: var(--coffee-grounds);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: var(--lemonade);
+  outline: none;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--coffee-grounds);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link {
+    transition: none;
   }
 }
-.navigation a:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+
+@media (max-width: 480px) {
+  .nav-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  .nav-brand {
+    justify-content: center;
+  }
+  .nav-links {
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
