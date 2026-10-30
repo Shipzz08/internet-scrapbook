@@ -1,5 +1,6 @@
 :root {
   --poppy: #FF4D2E;
+  --skin: #D9A074;
 }
 
 @media (prefers-color-scheme: dark) {
