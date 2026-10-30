@@ -1,0 +1,300 @@
+:root {
+  --bubblegum: #F7A8C8;
+  --lilac: #C6A4EE;
+  --sky: #5FC3E8;
+  --tangerine: #FF9A3D;
+  --lime: #A8DC5A;
+}
+
+.homeshelf-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding: 2rem 28px 2rem 0; /* 28px margin from right edge */
+  --book-max: clamp(300px, 60svh, 560px);
+}
+
+.homeshelf-desktop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.homeshelf-mobile {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.shelf-content-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px; /* 12-20px gap between camera and first book */
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.shelf-row-2 {
+  margin-top: 2rem;
+}
+
+.shelf-camera-wrapper {
+  width: calc(var(--book-max) * 0.46); /* ~230px at 1920x900 */
+  min-width: 140px;
+  max-width: 230px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0;
+}
+
+.shelf-camera-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: none;
+}
+
+.camera-flash {
+  opacity: 0.2;
+  transition: opacity 0.2s ease;
+}
+
+.camera-flash.active {
+  opacity: 1;
+}
+
+.bookshelf-list {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.bookshelf-item {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.book-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 3px solid var(--coffee-grounds);
+  border-radius: 6px 6px 0 0;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.book-spine:hover,
+.book-spine:focus {
+  transform: translateY(-14px) rotate(2deg);
+  outline: none;
+}
+
+.book-spine:focus-visible {
+  outline: 3px solid var(--coffee-grounds);
+  outline-offset: 3px;
+}
+
+.book-hover-tag {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background: var(--neutral-paper);
+  color: var(--coffee-grounds);
+  font-family: var(--font-notes);
+  font-size: 0.95rem;
+  padding: 2px 8px;
+  border: 2px solid var(--coffee-grounds);
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.book-spine:hover .book-hover-tag,
+.book-spine:focus .book-hover-tag {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.book-label-strip {
+  background: var(--neutral-paper);
+  border: 2px solid var(--coffee-grounds);
+  border-radius: 3px;
+  padding: 10px 4px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px; /* proportional strip width (~56px at 1920x900) */
+  max-width: 85%;
+  max-height: 88%;
+  overflow: hidden;
+}
+
+.book-label-text {
+  font-family: var(--font-heading);
+  font-size: clamp(15px, calc(var(--book-max) * 0.042), 22px); /* ~22px at 1920x900, never below 15px */
+  font-weight: 700;
+  color: var(--coffee-grounds);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* Shelf Plank starts at var(--shelf-left) and runs to right edge of screen */
+.shelf-plank {
+  width: calc(100vw - var(--shelf-left));
+  margin-right: -28px; /* matches wrapper right padding */
+  height: 32px;
+  background: var(--coffee-grounds);
+  border-top: 3px solid var(--coffee-grounds);
+  position: relative;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 2px;
+}
+
+.shelf-plank-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--honey-drizzle);
+  border-bottom: 2px solid var(--coffee-grounds);
+  border-top-left-radius: 10px;
+}
+
+/* CSS Patterns per book */
+.pattern-paw-prints {
+  background-image: radial-gradient(circle, var(--coffee-grounds) 2px, transparent 3px);
+  background-size: 14px 14px;
+}
+
+.pattern-clouds {
+  background-image: radial-gradient(circle at 50% 30%, var(--sky) 4px, transparent 5px),
+                    radial-gradient(circle at 30% 70%, var(--sky) 6px, transparent 7px);
+  background-size: 20px 20px;
+}
+
+.pattern-sun-arcs {
+  background-image: repeating-radial-gradient(circle at 50% 100%, transparent, transparent 8px, var(--poppy) 8px, var(--poppy) 11px, var(--lemonade) 11px, var(--lemonade) 14px);
+}
+
+.pattern-stars-moon {
+  background-image: radial-gradient(circle, var(--lemonade) 2px, transparent 4px),
+                    radial-gradient(circle at 80% 20%, var(--neutral-paper) 5px, transparent 6px);
+  background-size: 16px 16px;
+}
+
+.pattern-flowers {
+  background-image: radial-gradient(circle, var(--poppy) 3px, var(--lemonade) 4px, transparent 5px);
+  background-size: 18px 18px;
+}
+
+.pattern-checkerboard {
+  background-image: linear-gradient(45deg, var(--coffee-grounds) 25%, transparent 25%),
+                    linear-gradient(-45deg, var(--coffee-grounds) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, var(--coffee-grounds) 75%),
+                    linear-gradient(-45deg, transparent 75%, var(--coffee-grounds) 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+  opacity: 0.9;
+}
+
+.pattern-waves {
+  background-image: repeating-linear-gradient(0deg, var(--sea-blue), var(--sea-blue) 2px, transparent 2px, transparent 10px);
+}
+
+.pattern-dashed-road {
+  background-image: linear-gradient(to bottom, var(--lemonade) 50%, transparent 50%);
+  background-size: 4px 16px;
+}
+
+.pattern-wheels {
+  background-image: radial-gradient(circle, transparent 4px, var(--coffee-grounds) 5px, var(--coffee-grounds) 7px, transparent 8px);
+  background-size: 16px 16px;
+}
+
+.pattern-mountains {
+  background-image: linear-gradient(135deg, var(--lime) 25%, transparent 25%),
+                    linear-gradient(225deg, var(--sea-blue) 25%, transparent 25%);
+  background-size: 14px 14px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .book-spine {
+    transition: none;
+  }
+  .book-spine:hover,
+  .book-spine:focus {
+    transform: none;
+  }
+  .camera-flash {
+    transition: none;
+  }
+}
+
+/* Responsive layout breakpoints */
+@media (max-width: 1024px) {
+  .shelf-content-row {
+    gap: 12px;
+  }
+  .shelf-camera-wrapper {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeshelf-desktop {
+    display: none;
+  }
+  .homeshelf-mobile {
+    display: flex;
+  }
+  .homeshelf-wrapper {
+    padding: 1.5rem 0 1rem 0;
+  }
+  .shelf-camera-wrapper {
+    width: 120px;
+  }
+  .book-spine {
+    height: 220px !important;
+  }
+  .book-label-text {
+    font-size: 15px;
+  }
+  .shelf-content-row {
+    gap: 8px;
+    justify-content: center;
+  }
+  .shelf-plank {
+    width: 100vw;
+    margin-right: 0;
+    border-radius: 0;
+  }
+}

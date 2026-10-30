@@ -1,6 +1,16 @@
 :root {
   --poppy: #FF4D2E;
   --skin: #D9A074;
+  --font-book-1: 'Gochi Hand', 'Caveat', cursive;
+  --font-book-2: 'Indie Flower', 'Caveat', cursive;
+  --font-book-3: 'Shadows Into Light', 'Caveat', cursive;
+  --font-book-4: 'Amatic SC', 'Caveat', cursive;
+  --font-book-5: 'Dancing Script', 'Caveat', cursive;
+  --font-book-6: 'Special Elite', 'Caveat', cursive;
+  --font-book-7: 'Gloria Hallelujah', 'Caveat', cursive;
+  --font-book-8: 'Permanent Marker', 'Caveat', cursive;
+  --font-book-9: 'Bangers', 'Caveat', cursive;
+  --font-book-10: 'Architects Daughter', 'Caveat', cursive;
 }
 
 @media (prefers-color-scheme: dark) {

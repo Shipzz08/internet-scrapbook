@@ -8,15 +8,22 @@
   align-items: stretch;
   box-sizing: border-box;
   padding: 0;
+  margin: 0;
   overflow: hidden;
+  border-radius: 0;
+  position: relative;
+  --shelf-left: 14vw;
 }
 
 .home-container {
   width: 100%;
+  height: 100%;
   margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: 40% 60%;
   align-items: stretch;
+  box-sizing: border-box;
 }
 
 .home-text-col {
@@ -26,14 +33,15 @@
   text-align: left;
   padding-left: 6vw;
   padding-right: 2rem;
+  /* Reserve bottom shelf zone + gap to prevent overlap */
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: calc(30px + 40px + 32px);
   box-sizing: border-box;
 }
 
 .home-title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 6.5vw, 5.5rem);
+  font-size: clamp(3rem, 5.5vw, 5rem);
   line-height: 1.1;
   margin: 0 0 1rem 0;
   color: var(--coffee-grounds);
@@ -41,14 +49,14 @@
 
 .home-tagline {
   font-family: var(--font-notes);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
   margin: 0 0 1.25rem 0;
   color: var(--coffee-grounds);
 }
 
 .home-description {
   font-family: var(--font-notes);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   line-height: 1.5;
   margin: 0;
   color: var(--coffee-grounds);
@@ -58,6 +66,10 @@
   display: flex;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -72,12 +84,15 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: left;
+    height: auto;
   }
   .home-text-col {
     padding: 0;
     align-items: flex-start;
+    justify-content: flex-start;
   }
   .home-illustration-col {
     width: 100%;
+    height: auto;
   }
 }
