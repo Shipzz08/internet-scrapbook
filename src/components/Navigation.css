@@ -1,12 +1,3 @@
-/* Anchor offset and top padding for fixed nav */
-html {
-  scroll-padding-top: 100px;
-}
-
-body {
-  padding-top: 100px;
-}
-
 .navigation {
   position: fixed;
   top: 0;

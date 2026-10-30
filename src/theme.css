@@ -1,3 +1,7 @@
+:root {
+  --poppy: #FF4D2E;
+}
+
 @media (prefers-color-scheme: dark) {
   /* No changes needed for dark mode – keep light defaults */
 }

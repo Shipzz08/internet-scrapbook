@@ -1,4 +1,5 @@
 import './HomeSection.css';
+import HomeIllustration from './HomeIllustration';
 
 export default function HomeSection() {
   return (
@@ -10,8 +11,7 @@ export default function HomeSection() {
           <p className="home-description">A quiet digital corkboard for everyday moments and short stories.</p>
         </div>
         <div className="home-illustration-col" aria-hidden="true">
-          {/* TEMP: illustration goes here */}
-          <div className="illustration-placeholder"></div>
+          <HomeIllustration />
         </div>
       </div>
     </section>

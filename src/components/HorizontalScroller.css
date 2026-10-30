@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.horizontal-scroller {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  outline: none;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.horizontal-scroller::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.scroller-panel {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  padding-top: 100px; /* space for fixed nav */
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .horizontal-scroller {
+    scroll-behavior: auto;
+  }
+}

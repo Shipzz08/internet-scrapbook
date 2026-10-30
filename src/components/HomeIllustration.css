@@ -1,0 +1,22 @@
+.home-illustration-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.home-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .home-illustration-wrapper {
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    height: 70vw;
+  }
+}
