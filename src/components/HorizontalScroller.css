@@ -37,7 +37,7 @@ html, body {
   overflow-x: hidden;
   scroll-snap-align: start;
   box-sizing: border-box;
-  padding-top: 100px; /* space for fixed nav */
+  padding-top: 75px; /* space for fixed slim nav */
   position: relative;
 }
 
