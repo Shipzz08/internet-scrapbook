@@ -57,27 +57,27 @@ export default function HomeShelf() {
 
   const renderBookItem = (book: CategoryBook) => {
     const heightCalc = `calc(var(--book-max) * ${book.height / 500})`;
+    const tagPosClass = book.tagPosition === 'inside' ? 'tag-pos-inside' : 'tag-pos-above';
     return (
       <li key={book.id} className="bookshelf-item">
+        <div className="book-wall-shadow" aria-hidden="true" />
+        <div className="book-grounding-shadow" aria-hidden="true" />
         <a
           href="#corkboard"
           className={`book-spine pattern-${book.pattern}`}
           style={
             {
               height: heightCalc,
-              width: `${book.width}px`,
+              width: `${book.width * 0.9}px`,
               backgroundColor: book.color,
-              transform: `rotate(${book.tilt}deg)`,
-              transformOrigin: 'bottom center',
               '--tilt': book.tilt,
             } as React.CSSProperties
           }
           onClick={(e) => handleBookClick(e, 'corkboard')}
           aria-label={`${book.spineTitle}, ${book.label} photos, open the Corkboard`}
         >
-          <div className="book-hover-tag" aria-hidden="true">
-            {book.label} · Open
-          </div>
+          <div className="book-spine-shadow" aria-hidden="true" />
+          <div className="book-spine-highlight" aria-hidden="true" />
           {book.hasStrip ? (
             <div
               className={`book-label-strip label-pos-${book.labelPosition}`}
@@ -114,6 +114,9 @@ export default function HomeShelf() {
             </div>
           )}
         </a>
+        <div className={`book-hover-tag ${tagPosClass}`} aria-hidden="true">
+          {book.label} · Open
+        </div>
       </li>
     );
   };

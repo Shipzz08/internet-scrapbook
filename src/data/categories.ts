@@ -12,6 +12,7 @@ export interface CategoryBook {
   labelPosition: 'top' | 'middle' | 'bottom';
   labelTilt: number; // degrees
   hasStrip: boolean;
+  tagPosition?: 'above' | 'inside';
 }
 
 export const CATEGORY_BOOKS: CategoryBook[] = [
@@ -29,6 +30,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'middle',
     labelTilt: 1,
     hasStrip: true,
+    tagPosition: 'above',
   },
   {
     id: 'sky-and-clouds',
@@ -44,6 +46,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'top',
     labelTilt: -1,
     hasStrip: true,
+    tagPosition: 'inside',
   },
   {
     id: 'sunset-and-sunrise',
@@ -59,6 +62,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'bottom',
     labelTilt: 2,
     hasStrip: true,
+    tagPosition: 'above',
   },
   {
     id: 'moon-and-night-sky',
@@ -74,6 +78,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'middle',
     labelTilt: -2,
     hasStrip: false,
+    tagPosition: 'inside',
   },
   {
     id: 'flowers-and-trees',
@@ -89,6 +94,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'top',
     labelTilt: 1,
     hasStrip: true,
+    tagPosition: 'above',
   },
   {
     id: 'cafe-coffee-and-food',
@@ -104,6 +110,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'bottom',
     labelTilt: -1,
     hasStrip: true,
+    tagPosition: 'inside',
   },
   {
     id: 'water-ocean-and-river',
@@ -119,6 +126,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'middle',
     labelTilt: 2,
     hasStrip: true,
+    tagPosition: 'above',
   },
   {
     id: 'streets',
@@ -134,6 +142,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'top',
     labelTilt: -1,
     hasStrip: false,
+    tagPosition: 'inside',
   },
   {
     id: 'cars-and-bikes',
@@ -149,6 +158,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'bottom',
     labelTilt: 1,
     hasStrip: true,
+    tagPosition: 'above',
   },
   {
     id: 'mountains-and-nature',
@@ -164,5 +174,6 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     labelPosition: 'middle',
     labelTilt: -2,
     hasStrip: true,
+    tagPosition: 'inside',
   },
 ];
