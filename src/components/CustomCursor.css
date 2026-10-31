@@ -43,22 +43,19 @@
   left: 0;
   will-change: transform;
   pointer-events: none;
-  /* Hotspot adjustment: aligns needle tip with mouse pointer (x, y) */
-  transform: translate(-4px, -32px);
+  /* Hotspot adjustment: aligns needle tip (29,29) precisely with mouse pointer (x, y) */
+  transform-origin: 29px 29px;
+  transform: translate(-29px, -29px);
   transition: transform 0.05s ease-out;
-  filter: drop-shadow(2px 4px 3px rgba(37, 37, 37, 0.35));
+  filter: drop-shadow(2px 4px 3px rgba(30, 42, 120, 0.35));
 }
 
 .custom-cursor.hovered {
-  transform: translate(-4px, -32px) scale(1.18) rotate(15deg);
+  transform: translate(-29px, -29px) scale(1.18) rotate(15deg);
 }
 
-.pushpin-img {
+.pushpin-pixel-svg {
   display: block;
-  width: 36px;
-  height: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
 }
 
 /* Whimsical Dense Cursor Trail Particles */

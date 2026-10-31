@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import pushpinImg from '../assets/pushpin.png';
 import './CustomCursor.css';
 
 interface TrailParticle {
@@ -20,6 +19,7 @@ const PALETTE = [
   '#89A377', // Matcha
   '#E7BD8B', // Honey Drizzle
   '#372516', // Coffee Grounds
+  '#FF96A8', // Flamingo Pink
 ];
 
 export default function CustomCursor() {
@@ -187,18 +187,50 @@ export default function CustomCursor() {
         </div>
       ))}
 
-      {/* Main Pixel-Art Pushpin Cursor using reference PNG asset */}
+      {/* Main Pixel-Art Pushpin Cursor (Authentic Pixel-Art SVG) */}
       <div
         className={`custom-cursor ${isHovered ? 'hovered' : ''}`}
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
         }}
       >
-        <img
-          src={pushpinImg}
-          alt="Pixel art pushpin cursor"
-          className="pushpin-img"
-        />
+        <svg
+          viewBox="0 0 32 32"
+          width="36"
+          height="36"
+          className="pushpin-pixel-svg"
+          style={{ shapeRendering: 'crispEdges' }}
+        >
+          {/* Drop shadow / Outer outline */}
+          <path d="M13 13 L29 29 L31 27 L15 11 Z" fill="#1E2A78" />
+          
+          {/* Metallic Needle */}
+          <path d="M14 14 L28 28 L26 29 L12 15 Z" fill="#9FBAD8" />
+          <path d="M14 14 L27 27 L26 28 L13 15 Z" fill="#CFE3FF" />
+          <rect x="25" y="25" width="2" height="2" fill="#FFFFFF" />
+
+          {/* Pushpin Head Outer Outline (Dark Green / Navy) */}
+          <path d="M6 2 L16 2 L20 6 L20 16 L16 20 L6 20 L2 16 L2 6 Z" fill="#1C3F12" />
+
+          {/* Base Lime Green Head */}
+          <path d="M7 3 L15 3 L19 7 L19 15 L15 19 L7 19 L3 15 L3 7 Z" fill="#9CE048" />
+
+          {/* Bright Highlight (Top/Left pixels) */}
+          <rect x="5" y="5" width="4" height="4" fill="#E2FF9E" />
+          <rect x="9" y="4" width="3" height="3" fill="#D2FA82" />
+          <rect x="4" y="9" width="3" height="3" fill="#D2FA82" />
+
+          {/* Midtone Green Body */}
+          <rect x="8" y="8" width="8" height="8" fill="#A8EC54" />
+
+          {/* Shaded Facets (Bottom/Right pixels) */}
+          <rect x="12" y="14" width="6" height="4" fill="#72B522" />
+          <rect x="14" y="11" width="4" height="4" fill="#82C52E" />
+          <rect x="15" y="7" width="3" height="4" fill="#82C52E" />
+          <rect x="7" y="15" width="6" height="3" fill="#64A218" />
+          <rect x="12" y="18" width="4" height="1" fill="#4E8410" />
+          <rect x="18" y="12" width="1" height="4" fill="#64A218" />
+        </svg>
       </div>
     </div>
   );
