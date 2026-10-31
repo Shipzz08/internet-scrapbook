@@ -1,6 +1,6 @@
 :root {
-  --poppy: #FF4D2E;
-  --skin: #D9A074;
+  --poppy: #E57054;
+  --skin: #E6E1DD;
   --font-book-1: 'Gochi Hand', 'Caveat', cursive;
   --font-book-2: 'Indie Flower', 'Caveat', cursive;
   --font-book-3: 'Shadows Into Light', 'Caveat', cursive;
@@ -11,24 +11,34 @@
   --font-book-8: 'Permanent Marker', 'Caveat', cursive;
   --font-book-9: 'Bangers', 'Caveat', cursive;
   --font-book-10: 'Architects Daughter', 'Caveat', cursive;
-  --buttermilk: #FFD230;
-  --pastel-blue: #D2C7FF;
-  --chocolate-cosmos: #505491;
-  --paper-light: #FFFCEB;
-  --blue-deep: #505491;
-  --cosmos-soft: #505491;
-  --breezy-blue: #505491;
-  --sunny-yellow: #FFD230;
-  --flamingo-pink: #E1FB62;
-  --beach-blue: #D2C7FF;
-  --ink-navy: #505491;
-  --lime: #E1FB62;
-  --matcha: #E1FB62;
-  --wood-base: #8A5A34;
-  --wood-dark: #5E3A1F;
-  --wood-light: #B98355;
-  --wood-edge: #D3A06A;
-  --wood-line: #505491;
+
+  /* The User's 6 Palette Colors */
+  --palette-navy: #304F6D;
+  --palette-sage: #899481;
+  --palette-terracotta: #E57054;
+  --palette-peach: #FFE1A0;
+  --palette-ice: #E2F3FD;
+  --palette-greige: #E6E1DD;
+
+  --buttermilk: #FFE1A0;
+  --pastel-blue: #E2F3FD;
+  --chocolate-cosmos: #304F6D;
+  --paper-light: #E6E1DD;
+  --blue-deep: #304F6D;
+  --cosmos-soft: #304F6D;
+  --breezy-blue: #304F6D;
+  --sunny-yellow: #FFE1A0;
+  --flamingo-pink: #E57054;
+  --beach-blue: #E2F3FD;
+  --ink-navy: #304F6D;
+  --lime: #899481;
+  --matcha: #899481;
+
+  --wood-base: #899481;
+  --wood-dark: #304F6D;
+  --wood-light: #FFE1A0;
+  --wood-edge: #E6E1DD;
+  --wood-line: #304F6D;
 }
 
 @media (prefers-color-scheme: dark) {
