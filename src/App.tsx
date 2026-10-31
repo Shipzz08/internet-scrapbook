@@ -1,10 +1,12 @@
 import Navigation from './components/Navigation';
 import HomeSection from './components/HomeSection';
 import HorizontalScroller from './components/HorizontalScroller';
+import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   return (
     <>
+      <CustomCursor />
       <Navigation />
       <HorizontalScroller>
         <div id="home" className="scroller-panel">
