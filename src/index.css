@@ -4,10 +4,15 @@
   --buttermilk: #FFF1B5;
   --pastel-blue: #C1DBE8;
   --chocolate-cosmos: #591427;
-  --lemonade: var(--buttermilk);
-  --sea-blue: var(--pastel-blue);
+  --bubblegum: #F7A8C8;
+  --lilac: #C6A4EE;
+  --sky: #5FC3E8;
+  --tangerine: #FF9A3D;
+  --poppy: #FF4D2E;
   --matcha: #89A377;
   --honey-drizzle: #E7BD8B;
+  --lemonade: var(--buttermilk);
+  --sea-blue: var(--pastel-blue);
   --coffee-grounds: var(--chocolate-cosmos);
   --neutral-cream: #FAF6EE;
   --neutral-paper: #FFFDF9;
