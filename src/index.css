@@ -11,12 +11,13 @@
   --border: var(--ink-navy);
   --accent: var(--breezy-blue);
   --text-h: var(--ink-navy);
-  --bg: var(--sunny-yellow);
+  --homepage-bg: #eee0c6;
+  --bg: var(--homepage-bg);
 }
 
 body {
   margin: 0;
-  background: var(--sunny-yellow);
+  background: var(--homepage-bg);
   color: var(--ink-navy);
   font-family: var(--font-notes);
   font-size: 18px;

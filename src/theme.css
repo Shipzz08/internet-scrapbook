@@ -34,11 +34,11 @@
   --lime: #899481;
   --matcha: #899481;
 
-  --wood-base: #899481;
-  --wood-dark: #304F6D;
-  --wood-light: #FFE1A0;
-  --wood-edge: #E6E1DD;
-  --wood-line: #304F6D;
+  --wood-base: #8A5A34;
+  --wood-dark: #5E3A1F;
+  --wood-light: #B98355;
+  --wood-edge: #D3A06A;
+  --wood-line: #3A2314;
 }
 
 @media (prefers-color-scheme: dark) {
