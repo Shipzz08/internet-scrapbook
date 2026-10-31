@@ -1,7 +1,6 @@
 /* Custom Pixel-Art Pushpin Cursor Styles */
 
 @media (pointer: fine) {
-  /* Hide default cursor and apply custom pointer */
   body,
   a,
   button,
@@ -15,7 +14,6 @@
     cursor: none !important;
   }
 
-  /* Preserve I-beam cursor for text editing */
   input[type="text"],
   input[type="email"],
   input[type="password"],
@@ -45,42 +43,40 @@
   left: 0;
   will-change: transform;
   pointer-events: none;
-  /* Offset so the needle tip (bottom-right 29,29) is the exact hotspot (0,0) */
-  transform-origin: 29px 29px;
-  transform: translate(-29px, -29px);
-  transition: transform 0.08s ease-out;
-  filter: drop-shadow(2px 3px 2px rgba(30, 42, 120, 0.25));
+  /* Hotspot adjustment: aligns needle tip with mouse pointer (x, y) */
+  transform: translate(-4px, -32px);
+  transition: transform 0.05s ease-out;
+  filter: drop-shadow(2px 4px 3px rgba(37, 37, 37, 0.35));
 }
 
 .custom-cursor.hovered {
-  transform: translate(-29px, -29px) scale(1.15) rotate(12deg);
+  transform: translate(-4px, -32px) scale(1.18) rotate(15deg);
 }
 
-.pushpin-svg {
+.pushpin-img {
   display: block;
+  width: 36px;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
-/* Whimsical Cursor Trail Particles */
+/* Whimsical Dense Cursor Trail Particles */
 .cursor-trail-particle {
   position: absolute;
   pointer-events: none;
-  animation: trail-fade-shrink 0.5s ease-out forwards;
+  animation: trail-drift-fade 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   z-index: 999998;
 }
 
-.cursor-trail-particle.shape-dot {
-  border-radius: 50%;
-  box-shadow: 0 0 3px currentColor;
-}
-
-@keyframes trail-fade-shrink {
+@keyframes trail-drift-fade {
   0% {
-    opacity: 0.85;
+    opacity: 0.95;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3) rotate(45deg);
+    transform: translate(calc(-50% + var(--drift-x)), calc(-50% + var(--drift-y))) scale(0.25) rotate(90deg);
   }
 }
 
