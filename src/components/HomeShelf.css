@@ -409,59 +409,59 @@
 
 /* CSS Patterns per book */
 .pattern-paw-prints {
-  background-image: radial-gradient(circle, var(--ink-navy) 2px, transparent 3px);
-  background-size: 14px 14px;
+  background-image: radial-gradient(circle, var(--ink-navy) 2.5px, transparent 3.5px);
+  background-size: 16px 16px;
 }
 
 .pattern-clouds {
-  background-image: radial-gradient(circle at 50% 30%, var(--sky) 4px, transparent 5px),
-                    radial-gradient(circle at 30% 70%, var(--sky) 6px, transparent 7px);
-  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 50% 30%, var(--neutral-paper) 5px, transparent 6px),
+                    radial-gradient(circle at 30% 70%, var(--pastel-blue) 7px, transparent 8px);
+  background-size: 22px 22px;
 }
 
 .pattern-sun-arcs {
-  background-image: repeating-radial-gradient(circle at 50% 100%, transparent, transparent 8px, var(--poppy) 8px, var(--poppy) 11px, var(--lemonade) 11px, var(--lemonade) 14px);
+  background-image: repeating-radial-gradient(circle at 50% 100%, transparent, transparent 8px, var(--buttermilk) 8px, var(--buttermilk) 12px, var(--ink-navy) 12px, var(--ink-navy) 15px);
 }
 
 .pattern-stars-moon {
-  background-image: radial-gradient(circle, var(--lemonade) 2px, transparent 4px),
-                    radial-gradient(circle at 80% 20%, var(--neutral-paper) 5px, transparent 6px);
-  background-size: 16px 16px;
-}
-
-.pattern-flowers {
-  background-image: radial-gradient(circle, var(--poppy) 3px, var(--lemonade) 4px, transparent 5px);
+  background-image: radial-gradient(circle, var(--sunny-yellow) 2.5px, transparent 4px),
+                    radial-gradient(circle at 75% 25%, var(--flamingo-pink) 6px, transparent 7px);
   background-size: 18px 18px;
 }
 
+.pattern-flowers {
+  background-image: radial-gradient(circle, var(--poppy) 3.5px, var(--sunny-yellow) 5px, transparent 6px);
+  background-size: 20px 20px;
+}
+
 .pattern-checkerboard {
-  background-image: linear-gradient(45deg, var(--ink-navy) 25%, transparent 25%),
-                    linear-gradient(-45deg, var(--ink-navy) 25%, transparent 25%),
-                    linear-gradient(45deg, transparent 75%, var(--ink-navy) 75%),
-                    linear-gradient(-45deg, transparent 75%, var(--ink-navy) 75%);
-  background-size: 10px 10px;
-  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
-  opacity: 0.9;
+  background-image: linear-gradient(45deg, var(--chocolate-cosmos) 25%, transparent 25%),
+                    linear-gradient(-45deg, var(--chocolate-cosmos) 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, var(--chocolate-cosmos) 75%),
+                    linear-gradient(-45deg, transparent 75%, var(--chocolate-cosmos) 75%);
+  background-size: 12px 12px;
+  background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+  opacity: 0.95;
 }
 
 .pattern-waves {
-  background-image: repeating-linear-gradient(0deg, var(--sea-blue), var(--sea-blue) 2px, transparent 2px, transparent 10px);
+  background-image: repeating-linear-gradient(0deg, var(--ink-navy), var(--ink-navy) 2.5px, transparent 2.5px, transparent 12px);
 }
 
 .pattern-dashed-road {
-  background-image: linear-gradient(to bottom, var(--sunny-yellow) 50%, transparent 50%);
-  background-size: 4px 16px;
+  background-image: linear-gradient(to bottom, var(--sunny-yellow) 55%, transparent 55%);
+  background-size: 4px 18px;
 }
 
 .pattern-wheels {
-  background-image: radial-gradient(circle, transparent 4px, var(--ink-navy) 5px, var(--ink-navy) 7px, transparent 8px);
-  background-size: 16px 16px;
+  background-image: radial-gradient(circle, transparent 4px, var(--ink-navy) 5px, var(--ink-navy) 7.5px, transparent 8.5px);
+  background-size: 18px 18px;
 }
 
 .pattern-mountains {
-  background-image: linear-gradient(135deg, var(--lime) 25%, transparent 25%),
-                    linear-gradient(225deg, var(--sea-blue) 25%, transparent 25%);
-  background-size: 14px 14px;
+  background-image: linear-gradient(135deg, var(--ink-navy) 25%, transparent 25%),
+                    linear-gradient(225deg, var(--beach-blue) 25%, transparent 25%);
+  background-size: 16px 16px;
 }
 
 /* Reduced motion preference */
