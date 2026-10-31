@@ -227,7 +227,12 @@ export default function HomeShelf() {
           </ul>
         </div>
         <div className="shelf-plank" aria-hidden="true">
-          <div className="shelf-plank-strip" />
+          <div className="shelf-plank-top">
+            <div className="shelf-contact-shadow" />
+          </div>
+          <div className="shelf-plank-front">
+            <div className="shelf-end-grain" />
+          </div>
         </div>
       </div>
 
@@ -241,7 +246,12 @@ export default function HomeShelf() {
           </ul>
         </div>
         <div className="shelf-plank" aria-hidden="true">
-          <div className="shelf-plank-strip" />
+          <div className="shelf-plank-top">
+            <div className="shelf-contact-shadow" />
+          </div>
+          <div className="shelf-plank-front">
+            <div className="shelf-end-grain" />
+          </div>
         </div>
 
         {/* Row 2 */}
@@ -251,7 +261,12 @@ export default function HomeShelf() {
           </ul>
         </div>
         <div className="shelf-plank" aria-hidden="true">
-          <div className="shelf-plank-strip" />
+          <div className="shelf-plank-top">
+            <div className="shelf-contact-shadow" />
+          </div>
+          <div className="shelf-plank-front">
+            <div className="shelf-end-grain" />
+          </div>
         </div>
       </div>
     </div>

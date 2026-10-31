@@ -22,6 +22,11 @@
   --flamingo-pink: #FF96A8;
   --beach-blue: #B0CDFF;
   --ink-navy: #1E2A78;
+  --wood-base: #8A5A34;
+  --wood-dark: #5E3A1F;
+  --wood-light: #B98355;
+  --wood-edge: #D3A06A;
+  --wood-line: #3A2314;
 }
 
 @media (prefers-color-scheme: dark) {

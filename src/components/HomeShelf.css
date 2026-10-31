@@ -15,7 +15,7 @@
   align-items: flex-end;
   box-sizing: border-box;
   padding: 2rem 28px 2rem 0; /* 28px margin from right edge */
-  --book-max: clamp(300px, 60svh, 560px);
+  --book-max: calc(clamp(300px, 60svh, 560px) * 0.95);
 }
 
 .homeshelf-desktop {
@@ -46,9 +46,9 @@
 }
 
 .shelf-camera-wrapper {
-  width: calc(var(--book-max) * 0.46); /* ~230px at 1920x900 */
-  min-width: 140px;
-  max-width: 230px;
+  width: calc(var(--book-max) * 0.46); /* ~218px at 1920x900 */
+  min-width: 133px;
+  max-width: 218px;
   flex-shrink: 0;
   display: flex;
   align-items: flex-end;
@@ -201,26 +201,77 @@
 }
 
 /* Shelf Plank starts at var(--shelf-left) and runs to right edge of screen */
+/* Shelf Plank starts at var(--shelf-left) and runs to right edge of screen */
 .shelf-plank {
   width: calc(100vw - var(--shelf-left));
   margin-right: -28px; /* matches wrapper right padding */
   height: 32px;
-  background: var(--breezy-blue);
-  border-top: 3px solid var(--ink-navy);
+  background: var(--wood-base);
+  border: 3px solid var(--wood-line);
   position: relative;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.shelf-plank-strip {
+.shelf-plank-top {
+  height: 9px;
+  background-color: var(--wood-edge);
+  background-image: 
+    radial-gradient(ellipse at 30% 50%, rgba(94,58,31,0.2) 0%, transparent 25%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Cfilter id='wood-noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005 0.4' numOctaves='3' seed='15' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.33 0.33 0.33 0.4 0 0.33 0.33 0.33 0.25 0 0.33 0.33 0.33 0.1 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23wood-noise)' opacity='0.6'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  border-top: 1px solid var(--wood-light);
+  border-bottom: 1px solid var(--wood-line);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.shelf-contact-shadow {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 6px;
-  background: var(--beach-blue);
-  border-bottom: 2px solid var(--ink-navy);
-  border-top-left-radius: 10px;
+  height: 4px;
+  background: var(--wood-dark);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.shelf-plank-front {
+  flex-grow: 1;
+  background-color: var(--wood-base);
+  background-image:
+    radial-gradient(ellipse at 25% 60%, rgba(94,58,31,0.28) 0%, rgba(94,58,31,0.15) 15%, transparent 35%),
+    radial-gradient(ellipse at 78% 40%, rgba(94,58,31,0.22) 0%, rgba(94,58,31,0.1) 12%, transparent 30%),
+    repeating-linear-gradient(1.5deg, transparent 0px, rgba(94,58,31,0.14) 2px, transparent 4px, rgba(185,131,85,0.12) 8px, transparent 12px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='150' viewBox='0 0 300 150'%3E%3Cfilter id='wood-grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.35' numOctaves='3' seed='42' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.33 0.33 0.33 0.36 0 0.33 0.33 0.33 0.23 0 0.33 0.33 0.33 0.12 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23wood-grain)' opacity='0.65'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+  position: relative;
+  border-bottom: 2px solid var(--wood-dark);
+}
+
+.shelf-end-grain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 1px;
+  background-image: radial-gradient(ellipse at left center,
+    rgba(94,58,31,0.45) 0%,
+    transparent 18%,
+    rgba(94,58,31,0.3) 25%,
+    transparent 42%,
+    rgba(94,58,31,0.35) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* CSS Patterns per book */
@@ -301,7 +352,7 @@
     gap: 12px;
   }
   .shelf-camera-wrapper {
-    width: 160px;
+    width: 152px;
   }
 }
 
@@ -316,10 +367,10 @@
     padding: 1.5rem 0 1rem 0;
   }
   .shelf-camera-wrapper {
-    width: 120px;
+    width: 114px;
   }
   .book-spine {
-    height: 220px !important;
+    height: 209px !important;
     transform: rotate(calc(var(--tilt, 0) * 0.5)) !important;
   }
   .book-spine:hover,
