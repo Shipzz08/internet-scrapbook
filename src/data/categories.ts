@@ -85,7 +85,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     color: 'var(--lilac)',
     fontFamily: 'var(--font-book-5)',
     fontScale: 1.05,
-    tilt: 3,
+    tilt: 0,
     labelPosition: 'top',
     labelTilt: 1,
     hasStrip: true,
