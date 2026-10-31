@@ -11,6 +11,17 @@
   --font-book-8: 'Permanent Marker', 'Caveat', cursive;
   --font-book-9: 'Bangers', 'Caveat', cursive;
   --font-book-10: 'Architects Daughter', 'Caveat', cursive;
+  --buttermilk: #FFF1B5;
+  --pastel-blue: #C1DBE8;
+  --chocolate-cosmos: #591427;
+  --paper-light: #FFFCEB;
+  --blue-deep: #2E5E7E;
+  --cosmos-soft: #723642;
+  --breezy-blue: #3548C0;
+  --sunny-yellow: #F5FAD2;
+  --flamingo-pink: #FF96A8;
+  --beach-blue: #B0CDFF;
+  --ink-navy: #1E2A78;
 }
 
 @media (prefers-color-scheme: dark) {

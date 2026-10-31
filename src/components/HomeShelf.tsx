@@ -1,9 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CATEGORY_BOOKS, type CategoryBook } from '../data/categories';
 import './HomeShelf.css';
 
 export default function HomeShelf() {
   const [cameraHovered, setCameraHovered] = useState(false);
+
+  // DEV-ONLY overlap check
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+
+    const checkOverlaps = () => {
+      const bookElements = document.querySelectorAll('.book-spine');
+      const rects = Array.from(bookElements).map((el, i) => {
+        const box = el.getBoundingClientRect();
+        return { id: CATEGORY_BOOKS[i]?.id || i, box };
+      });
+
+      for (let i = 0; i < rects.length - 1; i++) {
+        const b1 = rects[i].box;
+        const b2 = rects[i + 1].box;
+        // Check if bounding boxes overlap horizontally beyond slight touch
+        if (b1.right > b2.left + 2) {
+          console.warn(
+            `[DEV] Bookshelf overlap warning: Book "${rects[i].id}" and Book "${rects[i + 1].id}" have intersecting bounding boxes.`
+          );
+        }
+      }
+    };
+
+    const timer = setTimeout(checkOverlaps, 600);
+    window.addEventListener('resize', checkOverlaps);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkOverlaps);
+    };
+  }, []);
 
   const handleBookClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
@@ -31,28 +62,57 @@ export default function HomeShelf() {
         <a
           href="#corkboard"
           className={`book-spine pattern-${book.pattern}`}
-          style={{
-            height: heightCalc,
-            width: `${book.width}px`,
-            backgroundColor: book.color,
-          }}
+          style={
+            {
+              height: heightCalc,
+              width: `${book.width}px`,
+              backgroundColor: book.color,
+              transform: `rotate(${book.tilt}deg)`,
+              transformOrigin: 'bottom center',
+              '--tilt': book.tilt,
+            } as React.CSSProperties
+          }
           onClick={(e) => handleBookClick(e, 'corkboard')}
-          aria-label={`${book.label}, open the Corkboard`}
+          aria-label={`${book.spineTitle}, ${book.label} photos, open the Corkboard`}
         >
           <div className="book-hover-tag" aria-hidden="true">
-            Open →
+            {book.label} · Open
           </div>
-          <div className="book-label-strip">
-            <span
-              className="book-label-text"
+          {book.hasStrip ? (
+            <div
+              className={`book-label-strip label-pos-${book.labelPosition}`}
               style={{
-                fontFamily: book.fontFamily,
-                fontSize: `calc(clamp(15px, calc(var(--book-max) * 0.042), 22px) * ${book.fontScale})`,
+                transform: `rotate(${book.labelTilt}deg)`,
               }}
             >
-              {book.label}
-            </span>
-          </div>
+              <span
+                className="book-label-text"
+                style={{
+                  fontFamily: book.fontFamily,
+                  fontSize: `calc(clamp(16px, calc(var(--book-max) * 0.048), 26px) * ${book.fontScale})`,
+                }}
+              >
+                {book.spineTitle}
+              </span>
+            </div>
+          ) : (
+            <div
+              className={`book-direct-label label-pos-${book.labelPosition}`}
+              style={{
+                transform: `rotate(${book.labelTilt}deg)`,
+              }}
+            >
+              <span
+                className="book-label-text direct-spine-text"
+                style={{
+                  fontFamily: book.fontFamily,
+                  fontSize: `calc(clamp(16px, calc(var(--book-max) * 0.048), 26px) * ${book.fontScale})`,
+                }}
+              >
+                {book.spineTitle}
+              </span>
+            </div>
+          )}
         </a>
       </li>
     );

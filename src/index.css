@@ -1,33 +1,23 @@
 @import './theme.css';
 
 :root {
-  --buttermilk: #FFF1B5;
-  --pastel-blue: #C1DBE8;
-  --chocolate-cosmos: #591427;
-  --bubblegum: #F7A8C8;
-  --lilac: #C6A4EE;
-  --sky: #5FC3E8;
-  --tangerine: #FF9A3D;
-  --poppy: #FF4D2E;
-  --matcha: #89A377;
-  --honey-drizzle: #E7BD8B;
-  --lemonade: var(--buttermilk);
-  --sea-blue: var(--pastel-blue);
-  --coffee-grounds: var(--chocolate-cosmos);
-  --neutral-cream: #FAF6EE;
+  --lemonade: var(--sunny-yellow);
+  --sea-blue: var(--beach-blue);
+  --coffee-grounds: var(--ink-navy);
+  --neutral-cream: var(--sunny-yellow);
   --neutral-paper: #FFFDF9;
   --font-heading: 'Caveat', cursive;
   --font-notes: 'Kalam', cursive;
-  --border: #E2D2BC;
-  --accent: var(--lemonade);
-  --text-h: var(--coffee-grounds);
-  --bg: var(--neutral-cream);
+  --border: var(--ink-navy);
+  --accent: var(--breezy-blue);
+  --text-h: var(--ink-navy);
+  --bg: var(--sunny-yellow);
 }
 
 body {
   margin: 0;
-  background: var(--neutral-cream);
-  color: var(--coffee-grounds);
+  background: var(--sunny-yellow);
+  color: var(--ink-navy);
   font-family: var(--font-notes);
   font-size: 18px;
 }

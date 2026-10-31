@@ -4,8 +4,8 @@
   min-height: calc(100% + 100px);
   margin: -100px 0 0 0;
   padding: 100px 0 0 0;
-  background: var(--lemonade);
-  color: var(--coffee-grounds);
+  background: var(--sunny-yellow);
+  color: var(--ink-navy);
   display: flex;
   align-items: stretch;
   box-sizing: border-box;
@@ -44,14 +44,17 @@
   font-size: clamp(3rem, 5.5vw, 5rem);
   line-height: 1.1;
   margin: 0 0 1rem 0;
-  color: var(--coffee-grounds);
+  color: var(--breezy-blue);
 }
 
 .home-tagline {
   font-family: var(--font-notes);
   font-size: clamp(1.5rem, 2.6vw, 2rem);
   margin: 0 0 1.25rem 0;
-  color: var(--coffee-grounds);
+  color: var(--ink-navy);
+  background: linear-gradient(to top, var(--flamingo-pink) 55%, transparent 55%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .home-description {
@@ -59,7 +62,7 @@
   font-size: clamp(1.15rem, 1.8vw, 1.4rem);
   line-height: 1.5;
   margin: 0;
-  color: var(--coffee-grounds);
+  color: var(--ink-navy);
 }
 
 .home-illustration-col {
