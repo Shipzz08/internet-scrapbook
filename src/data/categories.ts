@@ -77,7 +77,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     tilt: -5,
     labelPosition: 'middle',
     labelTilt: -2,
-    hasStrip: false,
+    hasStrip: true,
     tagPosition: 'inside',
   },
   {
@@ -141,7 +141,7 @@ export const CATEGORY_BOOKS: CategoryBook[] = [
     tilt: -2,
     labelPosition: 'top',
     labelTilt: -1,
-    hasStrip: false,
+    hasStrip: true,
     tagPosition: 'inside',
   },
   {
