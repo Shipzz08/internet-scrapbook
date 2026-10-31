@@ -1,14 +1,14 @@
 .home-section {
   width: 100%;
-  height: 100%;
-  min-height: 100%;
+  height: calc(100% + 100px);
+  min-height: calc(100% + 100px);
+  margin: -100px 0 0 0;
+  padding: 100px 0 0 0;
   background: var(--lemonade);
   color: var(--coffee-grounds);
   display: flex;
   align-items: stretch;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   overflow: hidden;
   border-radius: 0;
   position: relative;
@@ -76,7 +76,8 @@
   .home-section {
     height: auto;
     min-height: 100%;
-    padding: 2rem 1.5rem;
+    margin-top: 0;
+    padding: 5rem 1.5rem 2rem 1.5rem;
     align-items: center;
     overflow: visible;
   }
