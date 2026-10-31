@@ -14,12 +14,14 @@ interface TrailParticle {
 }
 
 const PALETTE = [
-  '#FBD271', // Lemonade
-  '#0F4E77', // Sea Blue
-  '#89A377', // Matcha
-  '#E7BD8B', // Honey Drizzle
-  '#372516', // Coffee Grounds
-  '#FF96A8', // Flamingo Pink
+  '#FFD93D', // Bright Sunshine Yellow
+  '#FF76CE', // Vibrant Bubblegum Pink
+  '#4EBEFF', // Bright Sky Blue
+  '#C6A4EE', // Whimsical Lilac
+  '#A8DC5A', // Happy Lime Green
+  '#FF9A3D', // Tangerine Orange
+  '#FF616D', // Coral Red
+  '#B983FF', // Magic Purple
 ];
 
 export default function CustomCursor() {
@@ -180,7 +182,7 @@ export default function CustomCursor() {
                 height: '100%',
                 backgroundColor: p.color,
                 borderRadius: '50%',
-                boxShadow: `0 0 5px ${p.color}`,
+                boxShadow: `0 0 6px ${p.color}`,
               }}
             />
           )}
