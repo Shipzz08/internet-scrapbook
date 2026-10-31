@@ -78,7 +78,7 @@ export default function HomeShelf() {
           width="120"
           height="65"
           rx="10"
-          fill="var(--bubblegum)"
+          fill="var(--pastel-blue)"
           stroke="var(--coffee-grounds)"
           strokeWidth="3.5"
           strokeLinejoin="round"
@@ -86,7 +86,7 @@ export default function HomeShelf() {
         {/* Top viewfinder bump */}
         <path
           d="M 35 30 L 45 15 L 95 15 L 105 30 Z"
-          fill="var(--bubblegum)"
+          fill="var(--pastel-blue)"
           stroke="var(--coffee-grounds)"
           strokeWidth="3.5"
           strokeLinejoin="round"
@@ -98,7 +98,7 @@ export default function HomeShelf() {
           width="16"
           height="9"
           rx="2"
-          fill="var(--poppy)"
+          fill="var(--chocolate-cosmos)"
           stroke="var(--coffee-grounds)"
           strokeWidth="3"
         />
@@ -118,7 +118,7 @@ export default function HomeShelf() {
           cx="30"
           cy="46"
           r="3.5"
-          fill="var(--lemonade)"
+          fill="var(--buttermilk)"
           className={cameraHovered ? 'camera-flash active' : 'camera-flash'}
         />
         {/* Lens rings */}
@@ -126,7 +126,7 @@ export default function HomeShelf() {
           cx="70"
           cy="62"
           r="22"
-          fill="var(--lilac)"
+          fill="var(--chocolate-cosmos)"
           stroke="var(--coffee-grounds)"
           strokeWidth="3.5"
         />
@@ -134,7 +134,7 @@ export default function HomeShelf() {
           cx="70"
           cy="62"
           r="15"
-          fill="var(--sea-blue)"
+          fill="var(--buttermilk)"
           stroke="var(--coffee-grounds)"
           strokeWidth="3"
         />
