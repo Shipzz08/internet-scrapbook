@@ -1,11 +1,14 @@
 @import './theme.css';
 
 :root {
-  --lemonade: #FBD271;
-  --sea-blue: #0F4E77;
+  --buttermilk: #FFF1B5;
+  --pastel-blue: #C1DBE8;
+  --chocolate-cosmos: #591427;
+  --lemonade: var(--buttermilk);
+  --sea-blue: var(--pastel-blue);
   --matcha: #89A377;
   --honey-drizzle: #E7BD8B;
-  --coffee-grounds: #372516;
+  --coffee-grounds: var(--chocolate-cosmos);
   --neutral-cream: #FAF6EE;
   --neutral-paper: #FFFDF9;
   --font-heading: 'Caveat', cursive;
