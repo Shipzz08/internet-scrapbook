@@ -2,6 +2,7 @@ import Navigation from './components/Navigation';
 import HomeSection from './components/HomeSection';
 import HorizontalScroller from './components/HorizontalScroller';
 import CustomCursor from './components/CustomCursor';
+import CorkboardSection from './components/CorkboardSection';
 
 export default function App() {
   return (
@@ -13,12 +14,8 @@ export default function App() {
           <HomeSection />
         </div>
 
-        {/* TEMP: remove when real section is built */}
-        <div id="corkboard" className="scroller-panel" style={{ background: 'var(--neutral-paper)', padding: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center' }}>
-            <h1>Corkboard Section (Placeholder)</h1>
-            <p>Scroll horizontally between sections or vertically if content overflows.</p>
-          </div>
+        <div id="corkboard" className="scroller-panel" style={{ background: '#26A69A', padding: '3rem 1rem', boxSizing: 'border-box' }}>
+          <CorkboardSection />
         </div>
 
         {/* TEMP: remove when real section is built */}
